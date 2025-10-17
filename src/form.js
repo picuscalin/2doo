@@ -1,5 +1,6 @@
 let toDolist = [];
 import { Todo } from "./toDoCreate";
+import { display } from "./dom";
 export function toDoHandle() {
   const form = document.querySelector("form");
   form.addEventListener("submit", (e) => {
@@ -11,6 +12,7 @@ export function toDoHandle() {
 
     toDolist.push(new Todo(title, description, date, priority));
     console.log(toDolist);
+    display(toDolist);
     form.reset();
   });
 }
